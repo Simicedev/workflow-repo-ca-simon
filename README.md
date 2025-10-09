@@ -8,7 +8,7 @@ Modern front‑end coursework project featuring Tailwind-driven UI, API consumpt
 
 ---
 
-## ✨ Overview
+## Overview
 
 This repository demonstrates a simple Holidaze‑style venue listing + details flow with authentication (login / register) and a minimal JavaScript architecture:
 
@@ -22,7 +22,7 @@ This repository demonstrates a simple Holidaze‑style venue listing + details f
 
 ## ✅ Prerequisites
 
-- Node.js (LTS recommended, e.g. 18+)
+- Node.js
 - npm (bundled with Node)
 
 Check versions:
@@ -112,7 +112,7 @@ Included E2E scenarios:
 
 ---
 
-## 🔐 Environment Variables
+## Environment Variables
 
 Create a `.env` file (never commit it). The following variable names are required for certain tests:
 
