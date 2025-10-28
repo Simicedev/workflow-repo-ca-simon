@@ -2,8 +2,9 @@ name: CI
 
 on:
   pull_request:
+    branches: [main, workflow]
   push:
-    branches: [workflow]
+    branches: [main, workflow]
 
 jobs:
   unit:

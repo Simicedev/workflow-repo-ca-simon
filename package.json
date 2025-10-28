@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "npx tailwindcss -i ./css/input.css -o ./css/style.css --watch",
+    "start": "http-server -p 5173 -c-1 .",
     "test": "vitest run",
     "test:ui": "vitest",
+    "test:ci": "vitest run",
     "test:e2e": "playwright test",
     "lint": "eslint .",
     "prepare": "husky install"
@@ -25,7 +27,8 @@
     "prettier": "^3.6.2",
     "tailwindcss": "^3.4.12",
     "vitest": "^3.2.4",
-    "@playwright/test": "^1.48.0"
+    "@playwright/test": "^1.48.0",
+    "http-server": "^14.1.1"
   },
   "dependencies": {},
   "lint-staged": {
