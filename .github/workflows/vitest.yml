@@ -1,23 +1,26 @@
-name: CI/CD
+name: Vitest
 
 on:
-    pull_request:
-    branches:
-    - main 
-    - workflow
-    push:
-    branches: 
-    - main
-    - workflow
-    jobs:
-        build:
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@v2
-        - uses: actions/setup-node@v2
-          with:
-            node-version: 12
-        - run: npm ci
-        - run: npm test
-        - run: npm run build
-        - run: npm run deploy
+  pull_request:
+    branches: [main, workflow]
+  push:
+    branches: [main, workflow]
+
+jobs:
+  unit:
+    name: Lint + Unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run lint
+        continue-on-error: true
+
+      - run: npm run test:ci
